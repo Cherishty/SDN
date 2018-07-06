@@ -3,13 +3,14 @@ Param(
     $NetworkMode = "L2Bridge",
     $NetworkName = "l2bridge",
 	[ValidateSet("process", "hyperv")]
-	$IsolationType = "process"
+    $IsolationType = "process",
+    # Todo : Get these values using kubectl
+    $KubeDnsSuffix ="svc.cluster.local"
+    $KubeDnsServiceIp="10.96.0.10",
+    $serviceCIDR="10.96.0.0/12"
 )
 
-# Todo : Get these values using kubectl
-$KubeDnsSuffix ="svc.cluster.local"
-$KubeDnsServiceIp="11.0.0.10"
-$serviceCIDR="11.0.0.0/8"
+
 
 $WorkingDir = "c:\k"
 $CNIPath = [Io.path]::Combine($WorkingDir , "cni")
