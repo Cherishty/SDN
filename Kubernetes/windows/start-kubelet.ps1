@@ -2,10 +2,10 @@ Param(
     $clusterCIDR="192.168.0.0/16",
     $NetworkMode = "L2Bridge",
     $NetworkName = "l2bridge",
-	[ValidateSet("process", "hyperv")]
-    $IsolationType = "process",
+    [ValidateSet("process", "hyperv")]
+    $IsolationType = "hyperv",
     # Todo : Get these values using kubectl
-    $KubeDnsSuffix ="svc.cluster.local"
+    $KubeDnsSuffix ="svc.cluster.local",
     $KubeDnsServiceIp="10.96.0.10",
     $serviceCIDR="10.96.0.0/12"
 )
